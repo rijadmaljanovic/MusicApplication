@@ -1,0 +1,97 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue">Music Application</h1>
+        <div class="d-flex">
+            <button (click)="clickAddSong()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">New song</button>
+        </div>
+    </div>
+    
+</nav>
+
+<div style="width: 20%; margin: 10px;" class="input-group">
+  <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" [(ngModel)]="searchSong"  />
+  <button type="button" class="btn btn-outline-primary"  (click)="Search()">Search</button>
+</div>
+<table style="text-align: center;" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Song name</th>
+            <th scope="col">Artist name</th>
+            <th scope="col">Url</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Favourite</th>
+            <th scope="col">Category</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let row of songData">
+            <td>{{row.songName}}</td>
+            <td>{{row.artistName}}</td>
+            <td><a href="{{row.songUrl}}">{{row.songUrl}}</a></td>
+            <td>{{row.rating}}</td>
+            <td *ngIf="row.isFavourite==false" ><img class="icon" src="assets/x-icon.png" alt=""></td>
+            <td *ngIf="row.isFavourite==true" ><img class="icon" src="assets/checkmark-icon.png" alt=""></td>
+            <td>{{row.categoryId}}</td>
+            <td>
+                <button (click)="onEdit(row)" style="width:80px;" class="btn btn-primary"type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteSong(row)" style="width:80px;" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add/Update song</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">Song name</label>
+                  <input type="text" formControlName="songName" class="form-control" >
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputArtist" class="form-label">Artist name</label>
+                  <input type="text" formControlName="artistName" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputUrl" class="form-label">Url</label>
+                    <input type="text" formControlName="songUrl" class="form-control" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputRating" class="form-label">Rating(1-5)</label>
+                    <input type="text" formControlName="rating" class="form-control" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputCategory" class="form-label">Category</label>
+                    <input type="text" formControlName="categoryId" class="form-control" >
+                  </div>
+                  <!-- <div class="form-group">
+                    <select formControlName="categoryId">
+                      <option *ngFor="let cat of SelectCategory" [value]="cat.id">
+                        {{cat.name}}
+                      </option>
+                    </select>
+                  </div> -->
+                <div class="mb-3 form-check">
+                  <input type="checkbox" (change)="checkfalse = !checkfalse" class="form-check-input" formControlName="isFavourite">
+                  <label class="form-check-label"   >Favourite</label>
+                </div>
+
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postSongDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateSongDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
