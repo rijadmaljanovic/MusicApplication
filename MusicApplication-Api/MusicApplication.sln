@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApplication.Backoffice", "MusicApplication.Backoffice\MusicApplication.Backoffice.csproj", "{B9467EFE-B533-4E8D-A4FA-91DE3CF530E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApplication.Core", "MusicApplication.Core\MusicApplication.Core.csproj", "{2D409C45-4501-4FB1-95B0-845AC85A69E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApplication.Infrastructure", "MusicApplication.Infrastructure\MusicApplication.Infrastructure.csproj", "{03C61AEA-732E-4CA6-A80B-F92FA51F89ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9467EFE-B533-4E8D-A4FA-91DE3CF530E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9467EFE-B533-4E8D-A4FA-91DE3CF530E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9467EFE-B533-4E8D-A4FA-91DE3CF530E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9467EFE-B533-4E8D-A4FA-91DE3CF530E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D409C45-4501-4FB1-95B0-845AC85A69E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D409C45-4501-4FB1-95B0-845AC85A69E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D409C45-4501-4FB1-95B0-845AC85A69E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D409C45-4501-4FB1-95B0-845AC85A69E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C61AEA-732E-4CA6-A80B-F92FA51F89ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C61AEA-732E-4CA6-A80B-F92FA51F89ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C61AEA-732E-4CA6-A80B-F92FA51F89ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C61AEA-732E-4CA6-A80B-F92FA51F89ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA0EF783-5393-403D-9ECE-D328643FA2B4}
+	EndGlobalSection
+EndGlobal
